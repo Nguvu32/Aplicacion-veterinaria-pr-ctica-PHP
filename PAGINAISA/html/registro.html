@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildvet | Registro de Usuario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div id="logo-container">
+            <a href="Inicio.html" style="text-decoration: none; color: var(--color-texto-claro);">
+                <h2>Wildvet</h2> 
+            </a>
+        </div>
+        <nav>
+            <a href="Inicio.html#asesorias">Asesorías</a>
+            <a href="Inicio.html#planes-salud">Planes de Salud</a>
+            <a href="Inicio.html#formaciones">Formaciones</a>
+            <a href="Inicio.html#contacto">Contacto</a>
+            <a href="login.html" class="cta-button" style="padding: 8px 15px; margin-left: 20px; background-color: #ffd400; color: var(--color-principal-morado); font-size: 1em;">Acceso</a>
+        </nav>
+    </header>
+
+    <section id="registro" class="registro-section">
+        <div class="section-container" style="max-width: 100%;">
+            <h2><i class="fas fa-paw"></i> Regístrate en Wildvet</h2>
+            <p>Crea tu cuenta para empezar a gestionar la salud nutricional de tu mascota.</p>
+            
+            <div class="form-container">
+                <form action="../php/registro.php" method="POST" class="registro-form">
+                    
+                    <div class="form-group">
+                        <label for="nombre_registro">Nombre Completo:</label>
+                        <input type="text" id="nombre_registro" name="nombre_registro" placeholder="Tu nombre y apellidos" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email_registro">Correo Electrónico:</label>
+                        <input type="email" id="email_registro" name="email_registro" placeholder="ejemplo@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" placeholder="número de 9 dígitos" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password_registro">Contraseña:</label>
+                        <input type="password" id="password_registro" name="password_registro" placeholder="Mínimo 8 caracteres" required minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password_confirmar">Confirmar Contraseña:</label>
+                        <input type="password" id="password_confirmar" name="password_confirmar" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tipo_usuario">¿Qué te interesa más?</label>
+                        <select id="tipo_usuario" name="tipo_usuario" required>
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="asesoria">Asesoría y planes de salud</option>
+                            <option value="formacion">Formaciones</option>
+                            <option value="empresa">Consultoría para Empresas (Formulación)</option>
+                            <option value="otro">Otro Motivo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="acepto_terminos" name="acepto_terminos" required style="width: auto; margin-right: 10px;">
+                        <label for="acepto_terminos" style="display: inline; font-weight: normal; margin-left: 10px;">Acepto los <a href="terminosCondiciones.html" target="_blank">Términos y Condiciones</a></label>
+                        
+                    </div>
+
+                    <button type="submit" class="cta-button">Crear Cuenta</button>
+
+                </form>
+
+                <div class="opciones-registro">
+                    <p>¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Wildvet. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/isabel-calzado-s%C3%A1nchez-isawildvet/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/isa_wildvet/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/644436552" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Efecto en el Encabezado al hacer Scroll
+        const header = document.getElementById('main-header');
+        const moradoPrincipal = '#8e3ccb'; 
+        const verdeSecundario = '#3ca485';
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = verdeSecundario; 
+            } else {
+                header.style.backgroundColor = moradoPrincipal;
+            }
+        });
+    </script>
+</body>
+</html>

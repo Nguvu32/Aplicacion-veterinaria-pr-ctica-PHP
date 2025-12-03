@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildvet | Iniciar Sesión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div id="logo-container">
+            <a href="Inicio.html" style="text-decoration: none; color: var(--color-texto-claro);">
+                <h2>Wildvet</h2> 
+            </a>
+        </div>
+        <nav>
+            <a href="Inicio.html#asesorias">Asesorías</a>
+            <a href="Inicio.html#planes-salud">Planes de Salud</a>
+            <a href="Inicio.html#formaciones">Formaciones</a>
+            <a href="Inicio.html#contacto">Contacto</a>
+            <a href="registro.html" style="color: #ffd400;">Registro</a> 
+        </nav>
+    </header>
+
+    <section id="login" class="login-section">
+        <div class="section-container" style="max-width: 100%;">
+            <h2><i class="fas fa-user-lock"></i> Iniciar Sesión</h2>
+            <p>Accede a tu área de cliente para ver tus dietas, formaciones y citas.</p>
+            
+            <div class="form-container">
+                <form action="../php/validacion.php" method="POST" class="login-form">
+                    
+                    <div class="form-group">
+                        <label for="usuario_email">Correo Electrónico / Usuario:</label>
+                        <input type="text" id="usuario_email" name="email" placeholder="Introduce tu email o nombre de usuario" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" placeholder="Introduce tu contraseña" required>
+                    </div>
+
+                    <button type="submit" class="cta-button morado">Acceder a Mi Cuenta</button>
+
+                </form>
+
+                <div class="opciones-login">
+                    <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+                    <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Wildvet. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/isabel-calzado-s%C3%A1nchez-isawildvet/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/isa_wildvet/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/644436552" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Efecto en el Encabezado al hacer Scroll
+        const header = document.getElementById('main-header');
+        const moradoPrincipal = '#8e3ccb'; // Morado
+        const verdeSecundario = '#3ca485'; // Verde Azulado
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = verdeSecundario; 
+            } else {
+                header.style.backgroundColor = moradoPrincipal;
+            }
+        });
+    </script>
+</body>
+</html>
